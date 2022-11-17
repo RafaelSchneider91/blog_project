@@ -3,7 +3,7 @@
 {% block content %}
 
 <br><br>
-<h2>Portfolio Heading</h2>
+<h2>Portfólio</h2>
 
 <div class="row">
   {% for article in articles %}
@@ -14,7 +14,7 @@
          <h4 class="card-title">
            <a href="{% url 'postDetail' id=article.id %}">{{article.title}}</a>
          </h4>
-         <p class="card-text">{{article.body|slice:50}}</p>
+         <p class="card-text">{{article.body|slice:50| safe}}</p>
        </div>
      </div>
    </div>
