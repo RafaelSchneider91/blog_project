@@ -18,7 +18,7 @@
      <hr>
      <p>Postado em: {{details.date}}</p>
      <hr>
-     <p class="lead">{{details.body}}</p>
+     <p class="lead">{{details.body|safe}}</p>
      </div>
   </div>
   {% endblock content %}
