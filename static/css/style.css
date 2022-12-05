@@ -18,14 +18,21 @@ li {
 
 .menu {
 
-    position: fixed;
+    /* position: fixed; */
     background-color: rgba(255, 255, 255, 0.8);
-    min-width: 100%;
-    font-size: 15pt;
+    /* min-width: 100%; */
+    /* font-size: 15pt; */
     /* margin: 5px; */
-    padding: 5px 25px 5px 1px;
-    align-content: center;
+    padding: 15px 25px 15px 25px;
+    /* align-content: center; */
     /* text-align: end; */
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2030;
+
 }
 
 a {
