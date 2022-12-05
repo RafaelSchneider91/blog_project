@@ -2,23 +2,70 @@
 {% load static %}
 {% block content %}
 
-<br><br>
-<h2>Portfólio</h2>
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-<div class="row">
-  {% for article in articles %}
-   <div class="col-lg-4 col-sm-6 portfolio-item">
-     <div class="card h-100">
-       <a href="{% url 'postDetail' id=article.id %}"><img class="card-img-top" src="{{article.thumb.url}}" alt=""></a>
-       <div class="card-body">
-         <h4 class="card-title">
-           <a href="{% url 'postDetail' id=article.id %}">{{article.title}}</a>
-         </h4>
-         <p class="card-text">{{article.body|slice:50| safe}}</p>
-       </div>
-     </div>
-   </div>
-  <br><br>
-  {% endfor %}
-</div>
+<br><br>
+<section>
+  <div>
+    <h2>Carreira Profissional</h2>
+    <h3>Experiência</h3>
+
+    <h5>Freelance</h5>
+    <h5>Consultoria em BI</h5>
+    <li>Periodo: novembro de 2020 - Present (1 ano 7 meses)</li>
+    <li>Desenvolvimento de Projetos no Power BI - Transforme seus dados em informações!</li>
+    
+    <h5> Stara S/A - Indústria de Máquinas e Implementos Agrícolas</h5>
+    <h5>Consultoria em BI</h5>
+    <li>Periodo: 6 anos 9 meses Analista de suporte de TI dezembro de 2021 - Present (6 meses) Não-Me-Toque/RS</li>
+    <li>Análise e suporte ao sistema MES/LES industrial;</li>
+    <li>Data Science/ BI/ BA</li>
+    <li>Analista sistema APS (Advanced Planning and Schedulling)</li>
+
+    <p>Formação acadêmica</p>
+
+  </div>
+
+  <div>
+    <H3>Meus Numeros</H3>
+    <p>~20Mi</p>
+    <p>Automações ERP SAP</p>
+    <p>~150Mi</p>
+    <p>Reduções de Custos</p>
+    <p>~15 Projetos</p>
+    <p>Analise de Impacto em Projetos</p>
+  </div>
+
+</section>
+
+
+<h2>Posts</h2>
+
+  <div class = 'flex-container' >
+
+    {% for article in articles %}
+          <section>
+            <div class ="conteudo" >
+              <a href="{% url 'postDetail' id=article.id %}">
+                <img class="imagempost imgefeito" src="{{article.thumb.url}}"></a>
+                  <a  href="{% url 'postDetail' id=article.id %}">{{article.title}}</a>
+                {% comment %} <p>{{article.body|slice:50| safe}}</p> {% endcomment %}
+                <br>
+                <br>
+              </div>
+        </section>
+      <br>
+  
+    {% endfor %}
+  </div>
+  
+  <section class = "contato">
+        <h2>Contato</h2>
+        <h5>Email:</h5>
+        <li>rafaelrafa91@hotmail.com</li>
+        <p>colocar foto</p>
+        {% comment %} <li>Desenvolvimento de Projetos no Power BI - Transforme seus dados em informações!</li> {% endcomment %}
+  </section>
+
+  
 {% endblock content %}

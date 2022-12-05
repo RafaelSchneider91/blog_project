@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
 <!-- Page Heading/Breadcrumbs -->
 <div class="row">
     <div class="col-lg-8 mx-auto">
@@ -10,15 +12,15 @@
          </ol>
     </div>
 </div>
- <div class="row">
+<div>
    <!-- Post Content Column -->
-   <div class="col-lg-8 mx-auto">
+    <div class="divdetails"> 
+        <img class="img-fluid" src="{{details.thumb.url}}" alt="">
+    </div>
      <!-- Preview Image -->
-     <img class="img-fluid rounded" src="{{details.thumb.url}}" alt="">
      <hr>
-     <p>Postado em: {{details.date}}</p>
+        <p>Postado em: {{details.date}}</p>
      <hr>
-     <p class="lead">{{details.body|safe}}</p>
-     </div>
-  </div>
+        <p class="lead">{{details.body|safe}}</p>
+</div>
   {% endblock content %}
